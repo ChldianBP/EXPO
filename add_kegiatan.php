@@ -46,17 +46,13 @@ include "header.php";
                                   <form role="form" method="POST" action="proses_add_kegiatan.php"enctype="multipart/form-data">
 
                                                 <div class="form-group row">
-                                                <div class="col-sm-2 col-form-label"><label for="exampleInputJudul">Nama Pantai</label></div><div class="col-sm-10"> <input  required type="text" class="form-control" id="Judul" placeholder="Masukan Nama Pantai" name="judul" ></div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                <div class="col-sm-2 col-form-label"><label for="exampleInputIsi">Alamat</label></div><div class="col-sm-10"> <textarea required class="form-control" id="alamat" placeholder="Masukan Alamat Pantai" name="isi"></textarea></div>
+                                                <div class="col-sm-2 col-form-label"><label for="exampleInputJudul">Ide Kegiatan</label></div><div class="col-sm-10"> <input  required type="text" class="form-control" id="deskripsi" placeholder="Masukan deskripsi" name="deskripsi" ></div>
                                                 </div>
 
                                                   <div class="form-group row">
                                                     <div class="col-sm-2 col-form-label">
                                                   <label for="exampleInputFile">File input</label></div><div class="col-sm-10">
-                                                  <input   type="file" id="gambar" name="fileToUpload" >
+                                                  <input   type="file" id="gambar" name="gambar" >
                                                   <p class="help-block">
                                                   <label  style=" color:red"class="control-label" for="inputWarning"><i class="fa fa-bell-o"></i> File Max 1 mb (Wajib dalam format PNG/ JPG)</label></div>
                                                 </div>

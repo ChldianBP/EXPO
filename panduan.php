@@ -64,8 +64,9 @@ include "header.php";
                                <tr>
                                  <td><?php echo $rows['no'];?></td>
                                  <td><?php echo $rows['isi'];?></td>
-                                 <td><a style="color: white;"href=""><button class="btn btn-primary btn-sm">Edit</button></a>
-                                     <a style="color: white;"href="proses_delet_panduan.php?id=<?php echo $rows['id_panduan'];?>" ><button class="btn btn-danger btn-sm btn-delete-row">Delete</button></a>
+                                 <td><a style="color: white;"href="update_panduan.php?id=<?php echo $rows['id_panduan'];?>"><button class="btn btn-primary btn-sm">Edit</button></a>
+                                     <a style="color: white;"href="proses_hapus_panduan.php?id=<?php echo $rows['id_panduan'];?>" ><button class="btn btn-danger btn-sm btn-delete-row">Delete</button></a>
+                                 </td>
                                </tr>
                     <?php
                     $nomor = $nomor+1;
@@ -143,3 +144,4 @@ include "header.php";
 </script>
 </body>
 </html>
+ 

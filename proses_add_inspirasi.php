@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_POST['judul']) ) {
+if (!isset($_POST['nama_pantai']) ) {
   header('Location:add_inspirasi.php');
   exit;
 }
@@ -8,17 +8,16 @@ include "kategori.php";
 
 date_default_timezone_set('Asia/Bangkok');
 
-$judul= $_POST['nama_pantai'];
+$nama_pantai= $_POST['nama_pantai'];
 $gambar= $_POST['gambar'];
 $alamat= $_POST['alamat'];
-
 
 
 
  if ($_FILES['fileToUpload']['size'] == 0 && $_FILES['fileToUpload']['error'] == 0 || $_FILES["fileToUpload"]["name"]=="")
 {
     $newfilename = "-";
-    $insert_query2 = mysqli_query($conn, "INSERT INTO `inspirasi` (`id_inspirasi`, `nama_pantai`, `gambar`, `alamat`) VALUES (NULL, '$judul', '$gambar', '$alamat'); ");
+    $insert_query2 = mysqli_query($conn, "INSERT INTO `inspirasi` (`id_inspirasi`, `nama_pantai`, `alamat`, , `gambar`) VALUES (NULL, '$nama_pantai', '$alamat', '$newfilename'); ");
     if ($insert_query2){
     echo "<script>
     alert ('Inspirasi berhasil ditambahkan');
@@ -35,7 +34,7 @@ $alamat= $_POST['alamat'];
 }
 
 else{
-$target_dir = "assets/images/blog/";
+$target_dir = "assets/images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -79,7 +78,7 @@ $temp = explode(".", $_FILES["fileToUpload"]["name"]);
 $newfilename = round(microtime(true)) . '.' . end($temp);
 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "$target_dir" . $newfilename)){
 
-  $insert_query2 = mysqli_query($conn, "INSERT INTO `inspirasi` (`id_inspirasi`, `nama_pantai`, `gambar`, `alamat`) VALUES (NULL, '$judul', '$gambar', '$alamat'); ");
+  $insert_query2 = mysqli_query($conn, "INSERT INTO `inspirasi` (`id_inspirasi`, `nama_pantai`, `gambar`, `alamat`) VALUES (NULL, '$nama_pantai', '$newfilename', '$alamat'); ");
   if ($insert_query2){
   echo "<script>
   alert ('Inspirasi berhasil ditambahkan');

@@ -69,8 +69,9 @@ include "header.php";
                                  <td><?php echo $nomor; ?></td>
                                  <td><?php echo $rows['gambar'];?></td>
                                  <td><?php echo $rows['deskripsi'];?></td>
-                                 <td><a style="color: white;"href=""><button class="btn btn-primary btn-sm">Edit</button></a>
-                                     <a style="color: white;"href="proses_delet_kegiatan.php?id=<?php echo $rows['id_kegiatan'];?>" ><button class="btn btn-danger btn-sm btn-delete-row">Delete</button></a>
+                                 <td><a style="color: white;"href="update_kegiatan.php?id=<?php echo $rows['id_kegiatan'];?>"><button class="btn btn-primary btn-sm">Edit</button></a>
+                                     <a style="color: white;"href="proses_hapus_kegiatan.php?id=<?php echo $rows['id_kegiatan'];?>" ><button class="btn btn-danger btn-sm btn-delete-row">Delete</button></a>
+                                 </td>
                                </tr>
                     <?php
                     $nomor = $nomor+1;

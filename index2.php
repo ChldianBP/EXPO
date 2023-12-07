@@ -67,7 +67,7 @@ include "kategori.php";
               <p>
                 Beach Exploration merupakan platform e-travel yang menawarkan berbagai keuntungan bagi pengguna yang menyukai pantai dan liburan. Dengan fitur relaksasi virtual, pengguna dapat merasakan kedamaian dan terhubung dengan alam
                 melalui gambar pantai yang indah, memberikan kesempatan untuk menghilangkan stres dan 3 bersantai setelah menjalani kehidupan sehari-hari. Selain itu, Destinasi Pantai memberikan gambaran mendalam tentang berbagai destinasi
-                pantai populer, memungkinkan pengguna merencanakan perjalanan yang sesuai dengan minat mereka dan menjelajahi lokasi eksotis di daerah Bantul. Hal ini membantu pengguna memperluas wawasan mereka tentang destinasi pantai yang
+                pantai populer, memungkinkan pengguna merencanakan perjalanan yang sesuai dengan minat mereka dan menjelajahi lokasi eksotis di daerah Yogyakarta. Hal ini membantu pengguna memperluas wawasan mereka tentang destinasi pantai yang
                 tersedia, sehingga memberikan pengalaman perjalanan yang tak terlupakan.
               </p>
 
@@ -127,7 +127,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
                   <a href="img/<?php echo $row['gambar'];?>" data-lightbox="image-1"><img src="img/<?php echo $row['gambar'];?>" alt="" /></a>
                   <div class="text-content">
                     <h4><?php echo $row['nama_pantai'];?></h4>
-                    <span><?php echo $row['alamat'];?></span>
+                    <span><a href = "<?php echo $row['alamat'];?>">klik maps</a></span>
                   </div>
                 </div>
               </div>
@@ -154,18 +154,12 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     <div class="tabs-content" id="ideKegiatan">
     <div class="container">
         <div class="row">
-          <div class="col-md-8 mx-auto">
+          <div class="col-md-4">
             <div class="wrapper">
-              <section id="first-tab-group" class="tabgroup">
-                <div id="tab<?php echo $row['no'];?>">
+              <div class="tabgroup">
                   <img src="img/<?php echo $row['gambar'];?>" alt="" />
                   <p><?php echo $row['deskripsi'];?></p>
-                </div>
-              </section>
-              <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-                <li><a href="#tab<?php echo $row['no'];?>" class="active">Ide kegiatan <?php echo $row['no'];?></a></li>
-              </ul>
-            </div>
+              </div>
           </div>
         </div>
       </div>

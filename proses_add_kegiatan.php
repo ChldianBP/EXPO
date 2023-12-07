@@ -1,36 +1,33 @@
 <?php
 session_start();
-if (!isset($_POST['judul']) ) {
-  header('Location:add_inspirasi.php');
+if (!isset($_POST['deskripsi']) ) {
+  header('Location:add_kegiatan.php');
   exit;
 }
 include "kategori.php";
 
 date_default_timezone_set('Asia/Bangkok');
 
-$judul= $_POST['nama_pantai'];
 $gambar= $_POST['gambar'];
-$alamat= $_POST['alamat'];
-
-
+$deskripsi= $_POST['deskripsi'];
 
 
  if ($_FILES['fileToUpload']['size'] == 0 && $_FILES['fileToUpload']['error'] == 0 || $_FILES["fileToUpload"]["name"]=="")
 {
     $newfilename = "-";
-    $insert_query2 = mysqli_query($conn, "INSERT INTO `inspirasi` (`id_inspirasi`, `nama_pantai`, `gambar`, `alamat`) VALUES (NULL, '$judul', '$gambar', '$alamat'); ");
+    $insert_query2 = mysqli_query($conn, "INSERT INTO `ide_kegiatan`(`id_kegiatan`, `gambar`, `deskripsi`) VALUES (NULL,'$newfilename','$deskripsi');");
     if ($insert_query2){
     echo "<script>
-    alert ('Inspirasi berhasil ditambahkan');
+    alert ('Kegiatan berhasil ditambahkan');
     </script>";
-    echo "<meta http-equiv='refresh' content='0;url=inspirasi.php'>";
+    echo "<meta http-equiv='refresh' content='0;url=kegiatan.php'>";
     }
 
     else{
     echo "<script>
-    alert ('Terjadi galat, Inspirasi gagal ditambahkan');
+    alert ('Terjadi galat, Kegiatan gagal ditambahkan');
     </script>";
-    echo "<meta http-equiv='refresh' content='0;url=add_inspirasi.php'>";
+    echo "<meta http-equiv='refresh' content='0;url=add_kegiatan.php'>";
     }
 }
 
@@ -70,7 +67,7 @@ if ($uploadOk == 0) {
  echo "<script>
             alert ('Cek Ukuran File, Tipe File');
             </script>";
-            echo "<meta http-equiv='refresh' content='0;url=add_inspirasi.php'>";
+            echo "<meta http-equiv='refresh' content='0;url=add_kegiatan.php'>";
 
 }
 
@@ -79,25 +76,25 @@ $temp = explode(".", $_FILES["fileToUpload"]["name"]);
 $newfilename = round(microtime(true)) . '.' . end($temp);
 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "$target_dir" . $newfilename)){
 
-  $insert_query2 = mysqli_query($conn, "INSERT INTO `inspirasi` (`id_inspirasi`, `nama_pantai`, `gambar`, `alamat`) VALUES (NULL, '$judul', '$gambar', '$alamat'); ");
+  $insert_query2 = mysqli_query($conn, "INSERT INTO `ide_kegiatan`(`id_kegiatan`, `gambar`, `deskripsi`) VALUES (NULL,'$newfilename','$deskripsi');");
   if ($insert_query2){
   echo "<script>
-  alert ('Inspirasi berhasil ditambahkan');
+  alert ('Kegiatan berhasil ditambahkan');
   </script>";
-  echo "<meta http-equiv='refresh' content='0;url=inspirasi.php'>";
+  echo "<meta http-equiv='refresh' content='0;url=kegiatan.php'>";
   }
 
   else{
   echo "<script>
-  alert ('Terjadi galat, Berita gagal ditambahkan');
+  alert ('Terjadi galat, Kegiatan gagal ditambahkan');
   </script>";
-  echo "<meta http-equiv='refresh' content='0;url=add_inspirasi.php'>";
+  echo "<meta http-equiv='refresh' content='0;url=add_kegiatan.php'>";
   }
   } else {
       echo "<script>
             alert ('Sorry, there was an error uploading your file');
             </script>";
-            echo "<meta http-equiv='refresh' content='0;url=add_inspirasi.php'>";
+            echo "<meta http-equiv='refresh' content='0;url=add_kegiatan.php'>";
   }
 }
 }
