@@ -65,7 +65,7 @@ include "header.php";
                                  <td><?php echo $rows['no'];?></td>
                                  <td><?php echo $rows['isi'];?></td>
                                  <td><a style="color: white;"href="update_panduan.php?id=<?php echo $rows['id_panduan'];?>"><button class="btn btn-primary btn-sm">Edit</button></a>
-                                     <a style="color: white;"href="proses_hapus_panduan.php?id=<?php echo $rows['id_panduan'];?>" ><button class="btn btn-danger btn-sm btn-delete-row">Delete</button></a>
+                                     <a style="color: white;"href="proses_delete_panduan.php?id=<?php echo $rows['id_panduan'];?>" ><button class="btn btn-danger btn-sm btn-delete-row">Delete</button></a>
                                  </td>
                                </tr>
                     <?php
